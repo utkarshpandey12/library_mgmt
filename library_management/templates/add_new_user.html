@@ -1,0 +1,12 @@
+<form action = "success/" method = "post">  
+    {% csrf_token %}
+    <p>Enter Username  <input type = "text" name = "new_user_username" /></p>  
+    <p>Enter Password  <input type = "text" name = "new_user_password" /></p> 
+    <label for="user">select new user status</label>
+    <select name="new_user_type" id="status">
+        <option value="Member">Member</option>
+        <option value="Librarian">Librarian</option>
+    </select>
+    <p><input type = "submit" value = "submit" /></p> 
+    <a href="{% url 'logout' %}">logout</a>
+</form>

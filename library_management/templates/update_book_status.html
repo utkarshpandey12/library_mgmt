@@ -1,0 +1,36 @@
+{% if is_book_available %}
+<form action="confirm/" method="post">
+    {% csrf_token %}
+    <label for="books">select book status</label>
+    <select name="status" id="status">
+      <option value="BORROWED">BORROWED</option>
+    </select>
+    <br><br>
+    <label for="user">select user to assign the book (username,id)</label>
+    <select name="users" id="users">
+        {% for item in query_results %}
+        {% if item.id == default_assigned_user %}
+        <option value="{{ item.id }}" selected>{{ item.username }} {{ item.id }}</option>
+        {% else %}
+        <option value="{{ item.id }}">{{ item.username }} {{ item.id }}</option>
+        {% endif %}
+        {% endfor %}  
+    </select>
+    <br><br>
+    <button type="submit">Update</button>
+</form>
+{% else %}
+<form action="confirm/" method="post">
+    {% csrf_token %}
+    <label for="books">select book status</label>
+    <select name="status" id="status">
+      <option value="AVAILABLE">AVAILABLE</option>
+    </select>
+    <br><br>
+    
+    <button type="submit">Update</button>
+</form>
+
+{% endif %}
+
+<a href="{% url 'logout' %}">logout</a>

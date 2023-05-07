@@ -1,0 +1,18 @@
+
+{% block content %}
+{% if is_member %}
+  <h2>Welcome Member User</h2>
+  <a href="{% url 'all_books' user_id=user.id %}">Available Books</a>
+  <br></br>
+  <a href="{% url 'my_books' user_id=user.id %}">My books</a>
+{% else %}
+  <h2>Welcome Library User</h2>
+  <a href="{% url 'manage_books' user_id=user.id %}">Manage Books</a>
+  <br></br>
+  <a href="{% url 'manage_users' user_id=user.id %}">Manage Users</a>
+  <br></br>
+  <a href="{% url 'logout' %}">logout</a>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,6 @@
+{% block content %}
+<h2>Something went wrong. Please try again</h2>
+<a href="{% url 'dashboard' user_id=user_id %}">Return Home</a>
+<br></br>
+<a href="{% url 'logout' %}">logout</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+<h3>click on book title to add book to your list</h3>
+<table>
+    <tr>
+        <th>Book Title</th>
+        <th>Availability</th>
+    </tr>
+    {% for item in query_results %}
+    <tr> 
+        <td><a href="{% url 'buy_books' user_id=user.id book_id=item.id %}">{{ item.book_title }}</a></td>
+        <td>{{ item.book_status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</br></br>
+<a href="{% url 'logout' %}">logout</a>

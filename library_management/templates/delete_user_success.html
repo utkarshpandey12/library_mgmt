@@ -1,0 +1,6 @@
+{% block content %}
+<h2>User Successfully Deleted</h2>
+<a href="{% url 'dashboard' user_id=main_user_id %}">Return Home</a>
+{% endblock %}
+<br></br>
+<a href="{% url 'logout' %}">logout</a>

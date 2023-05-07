@@ -1,0 +1,13 @@
+<h3>click on book title to return the book</h3>
+<table>
+    <tr>
+        <th>Book Title</th>
+    </tr>
+    {% for item in query_results %}
+    <tr> 
+        <td><a href="{% url 'return_my_books' user_id=user_id book_id=item.id %}">{{ item.book_title }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br></br>
+<a href="{% url 'logout' %}">logout</a>

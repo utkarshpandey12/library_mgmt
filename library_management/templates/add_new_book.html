@@ -1,0 +1,8 @@
+
+
+<form action = "success/" method = "post">  
+    {% csrf_token %}
+    <p>Enter Book Title  <input type = "text" name = "new_book_title" /></p>  
+    <p><input type = "submit" value = "submit" /></p> 
+    <a href="{% url 'logout' %}">logout</a>
+</form>
