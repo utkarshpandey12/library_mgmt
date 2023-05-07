@@ -45,4 +45,5 @@ Features/Assumptions/Design:
 4. $ python manage.py migrate
 5. $ python manage.py makemigrations
 6. $ pyython manage.py runserver
-7. visit http://127.0.0.1:8000/core/login/
+7. Edit databases in settings.py for local dev or use sqlite defaults. Currently the repo usees railways postgres db
+8. visit http://127.0.0.1:8000/core/login/
