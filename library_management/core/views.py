@@ -199,7 +199,7 @@ def add_new_user_success(request,user_id):
 
 
 @token_validator
-def logout(request):
+def logout_user(request):
     logout(request)
     response = render(request,'logout_success.html')
     response.delete_cookie('jwt_token')
